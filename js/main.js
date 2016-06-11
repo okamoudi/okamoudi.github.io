@@ -25,5 +25,5 @@ $(function(){
 
 $.getJSON("lang/ar.json",function(lang){
     console.log(lang.lang);
-    $("head").prepend($("<meta>").attr("lang",lang.lang));
+    $("html").attr("lang",lang.lang);
 });
