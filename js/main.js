@@ -22,3 +22,7 @@ $(function(){
     function newTyped(){ /* A new typed object */ }
 
     function foo(){ console.log("Callback"); }
+
+$.getJSON("lang/ar.json",function(json){
+    console.log(json);
+});
