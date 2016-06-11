@@ -23,6 +23,7 @@ $(function(){
 
     function foo(){ console.log("Callback"); }
 
-$.getJSON("lang/ar.json",function(json){
-    console.log(json);
+$.getJSON("lang/ar.json",function(lang){
+    console.log(lang.lang);
+    $("head").prpend($("<meta>").attr("lang",lang.lang));
 });
