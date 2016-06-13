@@ -1,14 +1,30 @@
 $(document).ready(function() {
     $('#fullpage').fullpage({
-        anchors:['lang','welcome', 'projects','contact']
+        
+    });
+
+
+    $(".langbtn").click(function(){
+        
+        if($(this).html() =="English"){
+            var langfile= "lang/en.json"
+            alert(langfile);
+        } else if($(this).html() =="عربي"){
+            var langfile= "lang/ar.json"
+            alert(langfile);
+       }
+//        $('#fullpage').remove();
+
+        $.getJSON(langfile,function(lang){
+            $("html").attr("lang",lang.lang);
+            console.log(lang.title);
+            $('#fullpage').fullpage({
+                anchors:['lang','welcome', 'projects','contact']
+            });
+        });
     });
 });
-
-$.getJSON("lang/ar.json",function(lang){
-    $("html").attr("lang",lang.lang);
-    console.log(lang.title);
-});
-
+ alert("hi");
 
 
 $(function() {
