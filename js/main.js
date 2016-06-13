@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#fullpage').fullpage({
-        
+//        anchors:["lang","welcome","projects","contacts"]
     });
 
 
@@ -8,23 +8,20 @@ $(document).ready(function() {
         
         if($(this).html() =="English"){
             var langfile= "lang/en.json"
-            alert(langfile);
+            console.log(langfile);
         } else if($(this).html() =="عربي"){
             var langfile= "lang/ar.json"
-            alert(langfile);
+            console.log(langfile);
        }
-//        $('#fullpage').remove();
 
-        $.getJSON(langfile,function(lang){
-            $("html").attr("lang",lang.lang);
-            console.log(lang.title);
-            $('#fullpage').fullpage({
-                anchors:['lang','welcome', 'projects','contact']
-            });
-        });
+//        $.getJSON(langfile,function(data){
+//            $("html").attr("lang",data.lang);
+//            console.log(data.title);
+//            var section = $("<div>").attr('class','section').attr("data-anchor","welcome");
+//            $('#fullpage').append(section);
+//        });
     });
 });
- alert("hi");
 
 
 $(function() {

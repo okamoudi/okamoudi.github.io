@@ -46,6 +46,12 @@
             width: 200px;
             margin: auto;
             display: inline-block;
+            -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;
             }
         
 
@@ -57,34 +63,39 @@
             background-image: -o-linear-gradient(top, #696d70, #b7c1c7);
             background-image: linear-gradient(to bottom, #696d70, #b7c1c7);
             text-decoration: none;
+            cursor: pointer;
             }
 
     </style>
     <div id="fullpage">
-        <div class="section">
+        <div class="section" data-anchor="lang" >
             <div id="menu">
                 <div class="langbtn">English</div>
                 <div class="langbtn">عربي</div>
             </div>
         </div>
-        <div class="section">
+        <div class="section" data-anchor="welcome">
+            <div id="greeting" style="display:none;">
+                <p>Hi</p>
+                <p>I am Omar ^1500</p>
+            </div>
             <h2 ><span id="hi"style="white-space:pre;"></span></h2>
         <div id="typed-strings" style="display:none;">
             <p>Enjoy exploring my Github page</p>
             </div>
         <span id="typed" style="white-space:pre;"></span>
         </div>
-        <div class="section">
+        <div class="section" data-anchor="projects">
             <div class="slide">
-                <div id="Scrobble" class="project">
+                <div data-anchor="Scrobble" class="project">
                     <h2>Scrobble</h2>
                     <p>At The University of Oregon Quack hack event I signed up with my team to create a game within 40 hr</p>
                 </div>
                 <a href="https://github.com/Oalamoud/Scrobble">Git repo</a>
             </div>
-            <div class="slide">project2</div>
+            <div data-anchor="proj2" class="slide">project2</div>
         </div>
-        <div class="section">
+        <div class="section" data-anchor="contact">
             footer
         </div>
     </div>
