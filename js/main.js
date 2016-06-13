@@ -5,7 +5,7 @@ $(document).ready(function() {
 });
 
 $.getJSON("lang/ar.json",function(lang){
-    console.log($("<meta>").attr("lang",lang.lang));
+    $("html").attr("lang",lang.lang);
 });
 
 
