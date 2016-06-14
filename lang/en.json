@@ -14,16 +14,18 @@
 		{
 			"title":"Scrobble",
 			"description":"At The University of Oregon Quack hack event I signed up with my team to create a game within 40 hr",
-			"repopage":"",
-			"repolink":"https://github.com/Oalamoud/Scrobble",
+			"links":{ 
+                "devpost":"http://devpost.com/software/scrobble", "Github":"https://github.com/Oalamoud/Scrobble"
+            },
 			"status":"released",
 			"version":"v4.0"
 		},
 		{
 			"title":"Shifthandler",
 			"description":"When I was working at Anjum hotel I saw my manager struggle with makink shifts scheduale, so I have decided to make a web based shift handler for any manager to easy manage employees shifts to save it as pdf then email it or print it",
-			"repopage":"",
-			"repolink":"https://github.com/Oalamoud/ShiftHandler",
+			"links":{ 
+                "repopage":"",    "repolink":"https://github.com/Oalamoud/ShiftHandler",
+            }
 			"status":"incomplete",
 			"version":"v0.0"
 
@@ -33,8 +35,11 @@
 		{
 			"title":"",
 			"description":"",
-			"repopage":"",
-			"repolink":"",
+			"links":{
+                "repopage":"",
+                "Github":"",
+                "devpost":"",
+            },
 			"status":"",
 			"version":""
 		}

@@ -19,8 +19,39 @@ var main = function(){
             $.each(data.greeting, function(i,val){
                 console.log(val);
                 $('#greeting').append($('<p>').html(val));
+                
             });
-            
+            $('#typed-strings').empty();
+            $.each(data.introlist, function(i,val){
+                console.log(val);
+                $('#typed-strings').append($('<p>').html(val));
+            });
+            $('#projects').empty();
+            var $project;
+            var $title;
+            var $description;
+            var $links;
+            var $link;
+            var $status;
+            var $version;
+            $.each(data.projects, function(i,val){
+                $project = $('<div>').attr('class','slide');
+                $title = $('<h2>').html(val.title);
+                $description = $('<p>').html(val.description);
+                $links = $('<div>').attr('id','links');
+                // APPEND
+                $project.append($title);
+                $project.append($description);
+                $project.append($links);
+                
+                $.each(val.links,function(key,val){
+                    $link =$('<a>').attr('href',val).html(key);
+                    $links.append($link);
+                });
+                $status=$('<div>').text(val.status);
+                $version=$('<div>').text(val.version);
+                $('#projects').append(project);
+            });
         });
     });
 };
