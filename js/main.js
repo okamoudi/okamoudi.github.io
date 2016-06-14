@@ -17,7 +17,7 @@ var main = function(){
 //            $("html").attr("lang",data.lang);            $('#greeting').append(data.greeting.forEach(parsep));
             $.each(data.greeting, function(i,val){
                 console.log(val);
-                $('#greeting').remove("p");
+                $('#greeting').empty();
                 $('#greeting').append($('<p>').html(val));
             });
             
