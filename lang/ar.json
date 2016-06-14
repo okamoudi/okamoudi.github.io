@@ -1,4 +1,3 @@
-header("access-control-allow-origin: *");
 {
 	"lang":"ar",
 	"dir":"rtl",
