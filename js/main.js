@@ -13,19 +13,21 @@ var main = function(){
             var langfile= "lang/ar.json"
             console.log(langfile);
        }
-
+        var listm = [
+		"أهلا",
+		"مرحبا بك في صفحة Github الخاصة بي"
+	]
         $.getJSON(langfile,function(data){
 //            $("html").attr("lang",data.lang);            $('#greeting').append(data.greeting.forEach(parsep));
-            console.log(data.greeting.forEach(parsep))
+            $.each(data.greeting, function(i,val){
+                console.log(val);
+            });
             
         });
     });
 };
 
-var parsep = function(data){
-    var result += $('<p>').text(data);
-    return result;
-};
+
 $(function() {
 
     $("#hi").typed({
