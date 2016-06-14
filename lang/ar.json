@@ -14,18 +14,19 @@
 		{
 			"title":"Scrobble",
 			"description":"في جامعة University of oregon  شاركت في مسابقة Quack Hack لانجاز لعبة في خلال 40  ساعة من العمل المتواصل",
-			"links":{ 
-                "devpost":"http://devpost.com/software/scrobble", "Github":"https://github.com/Oalamoud/Scrobble"
-            },
+			"links": {
+			     "devpost": "http://devpost.com/software/scrobble",
+			     "Github": "https://github.com/Oalamoud/Scrobble"
+		      },
 			"status":"تم الاطلاق",
 			"version":"v4.0"
 		},
 		{
 			"title":"Shifthandler",
 			"description":"عندما كنت أعمل في فندق أنجم رأيت مديري في العمل يصعب يعاني في تنسيق  جدول الورديات فقررت انشاء منصة لتنسيق الجداول للموظفين",
-			"links":{
-                "repolink":"https://github.com/Oalamoud/ShiftHandler",
-            },
+			"links": {
+			     "repolink": "https://github.com/Oalamoud/ShiftHandler"
+		      },
 			"status":"غير مكتمل",
 			"version":"v0.0"
 
@@ -38,7 +39,7 @@
             "links":{
                 "repopage":"",
                 "Github":"",
-                "devpost":"",
+                "devpost":""
             },
 			"status":"",
 			"version":""
