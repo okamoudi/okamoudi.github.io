@@ -1,4 +1,4 @@
-$(document).ready(function() {
+var main = function(){
     $('#fullpage').fullpage({
 //        anchors:["lang","welcome","projects","contacts"]
     });
@@ -14,16 +14,18 @@ $(document).ready(function() {
             console.log(langfile);
        }
 
-//        $.getJSON(langfile,function(data){
-//            $("html").attr("lang",data.lang);
-//            console.log(data.title);
-//            var section = $("<div>").attr('class','section').attr("data-anchor","welcome");
-//            $('#fullpage').append(section);
-//        });
+        $.getJSON(langfile,function(data){
+//            $("html").attr("lang",data.lang);            $('#greeting').append(data.greeting.forEach(parsep));
+            console.log(data.greeting.forEach(parsep))
+            
+        });
     });
-});
+};
 
-
+var parsep = function(data){
+    var result += $('<p>').text(data);
+    return result;
+};
 $(function() {
 
     $("#hi").typed({
@@ -67,6 +69,12 @@ function newTyped() {
         });
 
     });
+    
 }
+
+
+$(document).ready(function() {
+  main();  
+});
 
 
