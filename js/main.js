@@ -12,9 +12,9 @@ var main = function(){
         } else if($(this).html() =="عربي"){
             var langfile= "lang/ar.json"
             console.log(langfile);
-       }
+       };
         $.getJSON(langfile,function(data){
-//            $("html").attr("lang",data.lang);            $('#greeting').append(data.greeting.forEach(parsep));
+            $("html").attr("lang",data.lang);          
             $('#greeting').empty();
             $.each(data.greeting, function(i,val){
                 console.log(val);
