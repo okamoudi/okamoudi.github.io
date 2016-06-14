@@ -12,9 +12,9 @@ var main = function(){
         } else if($(this).html() =="عربي"){
             var langfile= "lang/ar.json"
             console.log(langfile);
-       };
+       }
         $.getJSON(langfile,function(data){
-            $("html").attr("lang",data.lang);          
+            $('html').attr('lang',data.lang);          
             $('#greeting').empty();
             $.each(data.greeting, function(i,val){
                 console.log(val);
@@ -36,6 +36,7 @@ var main = function(){
             var $version;
             $.each(data.projects, function(i,val){
                 $project = $('<div>').attr('class','slide');
+                $project.attr('data-anchor',val.title);
                 $title = $('<h2>').html(val.title);
                 $description = $('<p>').html(val.description);
                 $links = $('<div>').attr('id','links');
@@ -50,7 +51,7 @@ var main = function(){
                 });
                 $status=$('<div>').text(val.status);
                 $version=$('<div>').text(val.version);
-                $('#projects').append(project);
+                $('#projects').append($project);
             });
         });
     });
@@ -107,5 +108,3 @@ function newTyped() {
 $(document).ready(function() {
   main();  
 });
-
-
