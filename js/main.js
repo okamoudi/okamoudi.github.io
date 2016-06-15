@@ -5,7 +5,8 @@ var main = function(){
 
 
     $(".langbtn").click(function(){
-        
+        $("#hi").typed('reset');
+        $("#welcome").typed('reset');
         if($(this).html() =="English"){
             var langfile= "lang/en.json"
             console.log(langfile);
@@ -14,19 +15,19 @@ var main = function(){
             console.log(langfile);
        }
         $.getJSON(langfile,function(data){
-            $('html').attr('lang',data.lang);          
+            $('html').attr('lang',data.lang); 
+            $('html').attr('dir',data.dir); 
             $('#greeting').empty();
             $.each(data.greeting, function(i,val){
                 console.log(val);
                 $('#greeting').append($('<p>').html(val));
                 
-            });
+            });// end each
             $('#typed-strings').empty();
             $.each(data.introlist, function(i,val){
                 console.log(val);
                 $('#typed-strings').append($('<p>').html(val));
-            });
-            $('#projects').empty();
+            });//end each
             var $project;
             var $title;
             var $description;
@@ -34,53 +35,80 @@ var main = function(){
             var $link;
             var $status;
             var $version;
+            var $img ;
             $.each(data.projects, function(i,val){
-                $project = $('<div>').attr('class','slide');
-                $project.attr('data-anchor',val.title);
+                $projectid=$('#'+val.title+'id');
+                $projectid.empty();
+                $project =$('<div>').attr('class','fp-tableCell');
                 $title = $('<h2>').html(val.title);
                 $description = $('<p>').html(val.description);
                 $links = $('<div>').attr('id','links');
+                $info=$('<div>').attr('class','info');
+                $status=$('<div>').text(val.status);
+                $version=$('<div>').text(val.version);
                 // APPEND
+                $projectid.append($project);
                 $project.append($title);
                 $project.append($description);
                 $project.append($links);
+                $project.append($info);
+                $info.append($status);
+                $info.append($version);
                 
-                $.each(val.links,function(key,val){
-                    $link =$('<a>').attr('href',val).html(key);
+                $.each(val.links,function(key,value){
+                    $img = $('<img>');
+                    $link =$('<a>').attr('href',value);
+                    console.log(key);
+                    if (key=='devpost'){
+                        $img.attr('src',"http://nealrs.github.io/devpost-follow-button/icon/devpost-128.png"); 
+                        $link.append($img.attr('alt',val.title+' on '+key));
+                    } else if(key=='github') {
+                    
+                        $img.attr('src','https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67');
+                        $img.attr('alt',"Fork me on GitHub");
+                        $img.attr('data-canonical-src','https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png');
+                        $img.attr('style',"position: absolute; top: 0; left: 0; border: 0;");
+                        $link.append($img);
+                    }else {
+                        $link.text(key);
+                    }// end if
                     $links.append($link);
-                });
-                $status=$('<div>').text(val.status);
-                $version=$('<div>').text(val.version);
-                $('#projects').append($project);
-            });
-        });
-    });
-};
+                });//end each
+                
+            });//end each
+            $.fn.fullpage.moveTo('welcome');
+        hi();
+        });// end getJSON
+        
+    });// end .langbtn
+};// end main 
 
 
-$(function() {
+var hi= function(){
+    $(function() {
 
     $("#hi").typed({
-        strings: ["Hi", "I am Omar ^1500"],
-        // stringsElement: $('#typed-strings'),
+//        strings: ["Hi", "I am Omar ^1500"],
+        stringsElement: $('#greeting'),
         typeSpeed: 40,
         backDelay: 1000,
         loop: false,
         contentType: 'html', // or text
         // defaults to false for infinite loop
         loopCount: false,
-        callback: function() { $(".typed-cursor").remove();
-            newTyped(); },
+        callback: function() { $(".typed-cursor").empty();
+            welcome(); },
         resetCallback: function() {}
     });
 
-    $(".reset").click(function() {
-        $("#typed").typed('reset');
-    });
+//    $(".langbtn").click(function() {
+//        $("#hi").typed('reset');
+//    });
 
-});
+});//end function
+}
 
-function newTyped() {
+ var welcome =function() {
 
     $(function() {
 
@@ -93,10 +121,12 @@ function newTyped() {
             contentType: 'html', // or text
             // defaults to false for infinite loop
             loopCount: false,
-//            callback: function() { foo(); }
+            callback: function() { 
+                    $.fn.fullpage.moveTo('projects');
+            }
         });
 
-        $(".reset").click(function() {
+        $(".langbtn").click(function() {
             $("#typed").typed('reset');
         });
 

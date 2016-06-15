@@ -8,7 +8,7 @@
 	],
 	"introlist":[
 		"لكل مشروع حكايته الخاصة",
-        "أهلا بك في صفحة Github الخاصة بي"
+        "أهلا بك في صفحة Github الخاصة بي^2000"
 	],
 	"projects":[
 		{
@@ -16,7 +16,7 @@
 			"description":"في جامعة University of oregon  شاركت في مسابقة Quack Hack لانجاز لعبة في خلال 40  ساعة من العمل المتواصل",
 			"links": {
 			     "devpost": "http://devpost.com/software/scrobble",
-			     "Github": "https://github.com/Oalamoud/Scrobble"
+			     "github": "https://github.com/Oalamoud/Scrobble"
 		      },
 			"status":"تم الاطلاق",
 			"version":"v4.0"
@@ -25,7 +25,7 @@
 			"title":"Shifthandler",
 			"description":"عندما كنت أعمل في فندق أنجم رأيت مديري في العمل يصعب يعاني في تنسيق  جدول الورديات فقررت انشاء منصة لتنسيق الجداول للموظفين",
 			"links": {
-			     "repolink": "https://github.com/Oalamoud/ShiftHandler"
+			     "github": "https://github.com/Oalamoud/ShiftHandler"
 		      },
 			"status":"غير مكتمل",
 			"version":"v0.0"
@@ -37,8 +37,8 @@
 			"title":"",
 			"description":"",
             "links":{
-                "repopage":"",
-                "Github":"",
+                "githubpage":"",
+                "github":"",
                 "devpost":""
             },
 			"status":"",
