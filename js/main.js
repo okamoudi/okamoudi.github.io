@@ -36,6 +36,7 @@ var main = function(){
             var $status;
             var $version;
             var $img ;
+            var leftPos
             $.each(data.projects, function(i,val){
                 $projectid=$('#'+val.title+'id');
                 $projectid.empty();
@@ -54,6 +55,7 @@ var main = function(){
                 $project.append($info);
                 $info.append($status);
                 $info.append($version);
+                leftPos =100-(100/(i+1));
                 
                 $.each(val.links,function(key,value){
                     $img = $('<img>');
@@ -67,7 +69,7 @@ var main = function(){
                         $img.attr('src','https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67');
                         $img.attr('alt',"Fork me on GitHub");
                         $img.attr('data-canonical-src','https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png');
-                        $img.attr('style',"position: absolute; top: 0; left: 0; border: 0;");
+                        $img.attr('style',"position: absolute; top: 0; left: "+leftPos+"%; border: 0;");
                         $link.append($img);
                     }else {
                         $link.text(key);
