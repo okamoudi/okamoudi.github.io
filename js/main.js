@@ -1,10 +1,17 @@
 var main = function(){
+    var $window = $(window);
     $('#fullpage').fullpage({
 //        anchors:["lang","welcome","projects","contacts"]
+        sectionsColor : ['#eee', '#eee','#eee','#eee']
+        
     });
-
+    $window.disablescroll({
+    handleScrollbar: false
+});
+    
 
     $(".langbtn").click(function(){
+        $window.disablescroll('undo');
         $("#hi").typed('reset');
         $("#welcome").typed('reset');
         if($(this).html() =="English"){
@@ -42,7 +49,8 @@ var main = function(){
                 $projectid.empty();
                 $project =$('<div>').attr('class','fp-tableCell');
                 $title = $('<h2>').html(val.title);
-                $description = $('<p>').html(val.description);
+                $description = $('<p>').attr('class','desc');
+                $description.html(val.description);
                 $links = $('<div>').attr('id','links');
                 $info=$('<div>').attr('class','info');
                 $status=$('<div>').text(val.status);
