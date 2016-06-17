@@ -135,6 +135,7 @@ var hi= function(){
     $("#hi").typed({
 //        strings: ["Hi", "I am Omar ^1500"],
         stringsElement: $('#greeting'),
+        startDelay: 500,
         typeSpeed: 40,
         backDelay: 1000,
         loop: false,
@@ -181,12 +182,19 @@ var hi= function(){
 
 
 $(document).ready(function() {
-    if (sessionStorage.lang){
-        console.log('reload');
-        $langJSON= $.parseJSON(sessionStorage.getItem('lang'));
-        build($langJSON,"reload");
+    
+    if(window.location.hash){
+        if (sessionStorage.lang){
+            console.log('reload');
+            $langJSON= $.parseJSON(sessionStorage.getItem('lang'));
+            build($langJSON,"reload");
+        }else{
+            document.location.hash='';
+        }
     }
+    
   main();  
+    
 });
 //$(window).unload(function(){
 //  sessionStorage.removeItem('lang');
