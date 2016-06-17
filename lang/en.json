@@ -4,11 +4,11 @@
 	"title": "Omar Alamoudi | Gitub Repos",
 	"greeting": [
 		"Hi",
-		"I am Omar ^1500"
+		"I am Omar"
 	],
 	"introlist": [
 		"There is a story behind every project",
-		"Welcom to my Github page ^2000"
+		"Welcom to my Github page"
 	],
 	"projects": [{
 		"title": "Scrobble",
@@ -17,17 +17,16 @@
 			"devpost": "http://devpost.com/software/scrobble",
 			"github": "https://github.com/Oalamoud/Scrobble"
 		},
-		"status": "released",
-		"version": "v4.0"
+		"status": ["Status","released"],
+		"version": ["Version","v4.0"]
 	}, {
 		"title": "Shifthandler",
 		"description": "When I was working at Anjum hotel I saw my manager struggle with makink shifts scheduale, so I have decided to make a web based shift handler for any manager to easy manage employees shifts to save it as pdf then email it or print it",
 		"links": {
 			"github": "https://github.com/Oalamoud/ShiftHandler"
 		},
-		"status": "incomplete",
-		"version": "v0.0"
-
+		"status": ["Status","Incomplete"],
+		"version": ["Version","v0.0.0"]
 	}],
 	"_projectexample": [{
 		"title": "",
@@ -37,7 +36,7 @@
 			"github": "",
 			"devpost": ""
 		},
-		"status": "",
-		"version": ""
+		"status": ["",""],
+		"version": ["",""]
 	}]
 }

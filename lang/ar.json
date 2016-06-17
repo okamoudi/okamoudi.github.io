@@ -4,32 +4,31 @@
 	"title":"عمر العامودي | مستودعات Gitub",
 	"greeting":[
 		"أهلا",
-		"أنا عمر^1500"
+		"أنا عمر"
 	],
 	"introlist":[
 		"لكل مشروع حكايته الخاصة",
-        "أهلا بك في صفحة Github الخاصة بي^2000"
+        "أهلا بك في صفحة Github الخاصة بي"
 	],
 	"projects":[
 		{
 			"title":"Scrobble",
-			"description":"في جامعة University of oregon  شاركت في مسابقة Quack Hack لانجاز لعبة في خلال 40  ساعة من العمل المتواصل",
+			"description":"في جامعة University of oregon  شاركت في مسابقة Quack Hack لانجاز لعبة خلال 40  ساعة من العمل المتواصل",
 			"links": {
 			     "devpost": "http://devpost.com/software/scrobble",
 			     "github": "https://github.com/Oalamoud/Scrobble"
 		      },
-			"status":"تم الاطلاق",
-			"version":"v4.0"
-		},
+			"status": ["الحالة","تم الاطلاق"],
+            "version": ["الإصدار","v4.0"]
+        },
 		{
 			"title":"Shifthandler",
 			"description":"عندما كنت أعمل في فندق أنجم رأيت مديري في العمل يصعب يعاني في تنسيق  جدول الورديات فقررت انشاء منصة لتنسيق الجداول للموظفين",
 			"links": {
 			     "github": "https://github.com/Oalamoud/ShiftHandler"
 		      },
-			"status":"غير مكتمل",
-			"version":"v0.0"
-
+			"status": ["الحالة","غير مكتمل"],
+            "version": ["الإصدار","v0.0.0"]
 		}
 	],
 	"_projectexample":[
@@ -41,8 +40,17 @@
                 "github":"",
                 "devpost":""
             },
-			"status":"",
-			"version":""
+            "proglang":[
+                "java",
+                "python",
+                "html",
+                "css",
+                "jquery",
+                "javascript",
+                "mysql"
+            ],
+		    "status": ["الحالة",""],
+		    "version": ["الإصدار",""]
 		}
 	]
 }
