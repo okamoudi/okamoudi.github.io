@@ -17,6 +17,9 @@
 			"devpost": "http://devpost.com/software/scrobble",
 			"github": "https://github.com/Oalamoud/Scrobble"
 		},
+        "proglang":[
+                "java"
+        ],
 		"status": ["Status","released"],
 		"version": ["Version","v4.0"]
 	}, {
@@ -25,6 +28,13 @@
 		"links": {
 			"github": "https://github.com/Oalamoud/ShiftHandler"
 		},
+        "proglang":[
+                "python",
+                "html",
+                "css",
+                "jquery",
+                "javascript"
+        ],
 		"status": ["Status","Incomplete"],
 		"version": ["Version","v0.0.0"]
 	}],
@@ -36,6 +46,15 @@
 			"github": "",
 			"devpost": ""
 		},
+        "proglang":[
+                "java",
+                "python",
+                "html",
+                "css",
+                "jquery",
+                "javascript",
+                "mysql"
+        ],
 		"status": ["",""],
 		"version": ["",""]
 	}]

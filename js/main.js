@@ -1,30 +1,19 @@
 var main = function(){
     var $window = $(window);
     $('#fullpage').fullpage({
-//        anchors:["lang","welcome","projects","contacts"]
         sectionsColor : ['#eee', '#eee','#eee','#eee'],
         animateAnchor:false
-        
-    });
-    
-    
-    $window.disablescroll({
-    handleScrollbar: false
-});
-    
-
+    });// end fullpage
     $(".langbtn").click(function(){
         var langfile;
         $window.disablescroll('undo');
         $("#hi").typed('reset');
         $("#welcome").typed('reset');
         if($(this).html() =="English"){
-            langfile= "lang/en.json"
-            console.log(langfile);
+            langfile= "lang/en.json";
         } else if($(this).html() =="عربي"){
-            langfile= "lang/ar.json"
-            console.log(langfile);
-       }
+            langfile= "lang/ar.json";
+       } // end if
         var $langtoggle = 
     $.getJSON(langfile,function(data){
         sessionStorage.setItem('lang',JSON.stringify(data));
@@ -34,10 +23,8 @@ var main = function(){
         $langtoggle.complete(function(){
             $.fn.fullpage.moveTo('welcome');
             hi();
-        });
-        
+        });// end $langtoggle complete
     });// end .langbtn
-    
 };// end main 
 
 var build = function(data,option="main"){
@@ -47,20 +34,19 @@ var build = function(data,option="main"){
     $('#hi').empty();
     $('#typed').empty();
     $('#greeting').empty();
-    $.each(data.greeting, function(i,val){
-        console.log(val);
-        if (i==data.greeting[data.greeting.length-1]){
+    $.each(data.greeting, function(i,val){        
+        if (i==data.greeting.length-1){
             val = val+' ^1500';
-        }
+        } // end if
+        console.log(val);        
         $('#greeting').append($('<p>').html(val));
-
     });// end each
     $('#typed-strings').empty();
     $.each(data.introlist, function(i,val){
-        if (i==data.introlist[data.introlist.length-1]){
+        if (i==data.introlist.length-1){
             val = val+' ^2000';
-        }
-        console.log(val);
+        } // end if
+        console.log(val);        
         $('#typed-strings').append($('<p>').html(val));
     });//end each
     if (option=="reload"){
@@ -68,7 +54,7 @@ var build = function(data,option="main"){
         console.log('typed: '+data.introlist[data.introlist.length-1]);
         $('#hi').html(data.greeting[data.greeting.length-1]);
         $('#typed').html(data.introlist[data.introlist.length-1]);
-    }
+    } // end if
     var $project;
     var $title;
     var $description;
@@ -78,6 +64,7 @@ var build = function(data,option="main"){
     var $version;
     var $img ;
     var leftPos;
+    var $proglang;
     $.each(data.projects, function(i,val){
         $project=$('#'+val.title+'id');
         $sideproject=$('<div>').attr('class','sideproj');
@@ -94,6 +81,7 @@ var build = function(data,option="main"){
         $status=$('<li>').text(val.status[0]+': '+val.status[1]);
         $version=$('<li>').text(val.version[0]+': '+val.version[1]);
         $title.append($info);
+        $proglang = $('<ul>');
         // APPEND
         $project.append($sideproject);
         $sideproject.append($title);
@@ -102,6 +90,7 @@ var build = function(data,option="main"){
         $info.append($status);
         $info.append($version);
         $sideproject.append($description);
+        $project.append($proglang);
         $project.append($links);
 
         leftPos =100-(100/(i+1));
@@ -117,23 +106,31 @@ var build = function(data,option="main"){
                 $img.attr('src','https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67');
                 $img.attr('alt',"Fork me on GitHub");
                 $img.attr('data-canonical-src','https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png');
-                $img.attr('style',"position: absolute; top: 0; left: "+leftPos+"%; border: 0;");
+                $img.css({"position": "absolute", "top": "0", "left": leftPos+"%", "border": "0"});
                 $link.append($img);
             }else {
                 $link.text(key);
             }// end if
             $links.append($link);
-        });//end each
-
-    });//end each
-
+        });//end each link
+        $.each(val.proglang,function(indx,value){
+            $proglang.append($('<li>').html(value).attr('class','proglang-'+value));
+        }); // end proglang
+    });//end each projects 
+    if (lang =='ar'){
+        $(".sideproj").css({"float":"right","text-align":"right"});
+        $(".desc").css({"float":"right"});
+        $("ul.info").css({"float":"right", "text-align":"right"});
+        $("ul.info > li").css({"margin-left": "20px",
+    "margin-right": "0px"});
+        $(".desc").css({"float":"right"});
+    }
 }; //end build
 
 var hi= function(){
     $(function() {
 
     $("#hi").typed({
-//        strings: ["Hi", "I am Omar ^1500"],
         stringsElement: $('#greeting'),
         startDelay: 500,
         typeSpeed: 40,
@@ -152,7 +149,7 @@ var hi= function(){
 //    });
 
 });//end function
-}
+} // end hi func
 
  var welcome =function() {
 
@@ -169,16 +166,14 @@ var hi= function(){
             loopCount: false,
             callback: function() { 
                     $.fn.fullpage.moveTo('projects');
-            }
-        });
+            }// end callback
+        }); // end types
 
         $(".langbtn").click(function() {
             $("#typed").typed('reset');
-        });
-
-    });
-    
-}
+        }); // end click function
+    }); // end function
+} // end welcome func
 
 
 $(document).ready(function() {
@@ -190,12 +185,9 @@ $(document).ready(function() {
             build($langJSON,"reload");
         }else{
             document.location.hash='';
-        }
-    }
+        } // enf if session
+    } // end if location.hash
     
   main();  
     
 });
-//$(window).unload(function(){
-//  sessionStorage.removeItem('lang');
-//});
