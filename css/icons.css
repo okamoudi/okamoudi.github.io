@@ -75,7 +75,7 @@
 
 
 
-ul.icon li a{
+ul.icon>li>a{
     display: block;
     text-indent: 10000%;
     height: 100%;

@@ -4,11 +4,19 @@ text-align:center;
 #hi, #typed ,.typed-cursor{
     font-size: 4em;
 }
-.sideproj{
+.projects{
+    display: flex;
+}
+.contentText{
     width: 50%;
     float: left;
     height: 100%;
     text-align: left;
+}
+.contentIcons{
+    width: 50%;
+    float: right;
+    height: 100%;
 }
 li {
     text-align: center;
@@ -17,10 +25,7 @@ li {
 .desc{
     float: left;
 }
-.links{
-    width: 50%;
-    float: right;
-}
+
 .info{
     margin-right: 60px;
     font-size: .5em;
@@ -47,9 +52,18 @@ ul.info {
 }
 .proglangs>h5 , .links>h5 {
     float: left;
+    
 }
-.proglangs>ul>li , .links>ul>li{
-    text-indent: 100000%;
+
+.links>ul>li>a{
+    display: block;
+    text-indent: 10000%;
+    height: 100%;
+    width: 100%;
+}
+.proglangs,.links{
+    margin: 0 auto;
+    width: 80%;
 }
 .langbtn {
     background: #b7c1c7;

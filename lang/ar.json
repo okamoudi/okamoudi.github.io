@@ -20,9 +20,9 @@
 			"title":"Scrobble",
 			"description":"في جامعة University of oregon  شاركت في مسابقة Quack Hack لانجاز لعبة خلال 40  ساعة من العمل المتواصل",
 			"links": {
-			     "devpost": "http://devpost.com/software/scrobble",
-			     "github": "https://github.com/Oalamoud/Scrobble"
+			     "devpost": "http://devpost.com/software/scrobble"
 		      },
+            "forkongithub":"https://github.com/Oalamoud/Scrobble",
             "proglang":[
                 "Java_powered"
             ],
@@ -33,8 +33,8 @@
 			"title":"Shifthandler",
 			"description":"عندما كنت أعمل في فندق أنجم رأيت مديري في العمل يصعب يعاني في تنسيق  جدول الورديات فقررت انشاء منصة لتنسيق الجداول للموظفين",
 			"links": {
-			     "github": "https://github.com/Oalamoud/ShiftHandler"
 		      },
+            "forkongithub":"https://github.com/Oalamoud/ShiftHandler",
             "proglang":[
                 "python",
                 "html5",

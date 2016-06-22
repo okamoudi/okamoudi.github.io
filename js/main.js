@@ -52,6 +52,8 @@ var build = function(data,option=""){
     } // end if
     // Variables
     var $project;
+    var $contentText;
+    var $rightSide;
     var $title;
     var $description;
     var $links;
@@ -66,8 +68,10 @@ var build = function(data,option=""){
     Create project
     */
     $.each(data.projects, function(i,val){
+        // Set up variables
         $project=$('#'+val.title+'id');
-        $sideproject=$('<div>').attr('class','sideproj');
+        $contentText=$('<div>').attr('class','contentText');
+        $contentIcons=$('<div>').attr('class','contentIcons');
         $project.empty();
         $title = $('<h1>').html(val.title);
         $title = $('<div>').append($title);
@@ -84,36 +88,42 @@ var build = function(data,option=""){
         $proglangs = $('<div>').attr('class','proglangs');
         $proglang = $('<ul>');
         // APPEND
-        $project.append($sideproject);
-        $sideproject.append($title);
+        $project.append($contentText);
+        $project.append($contentIcons);
+        $contentText.append($title);
         $title.append($('<hr>'));
         $title.append($info);
         $info.append($status);
         $info.append($version);
-        $sideproject.append($description);
-        $project.append($proglangs);
-        $proglangs.prepend($('<h5>').text(data.titles[1]));
-        $project.append($links);
-        $links.append($('<h5>').text(data.titles[2]));
+        $contentText.append($description);
+        $contentIcons.append($proglangs);
+        if(0<val.proglang.length){
+            $proglangs.append($('<h5>').text(data.titles[1]));
+            console.log(data.titles[1]);
+        }
+        $contentIcons.append($links);
+        if(!$.isEmptyObject(val.links)){
+            $links.prepend($('<h5>').text(data.titles[2]));
+            console.log(data.titles[2]);
+        }
+        // control the github ribbon
         leftPos =100-(100/(i+1));
+        $img = $('<img>');
+        $img.attr('src','https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67');
+        $img.attr('alt',"Fork me on GitHub");
+        $img.attr('data-canonical-src','https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png');
+        $img.css({"position": "absolute", "top": "0", "left": leftPos+"%", "border": "0"});
+        $img= $('<a>').append($img).attr('href',val.forkongithub);
+        $project.append($img);
         // Create the links
+        var i=0;
         $.each(val.links,function(key,value){
-            $img = $('<img>');
-            $link =$('<a>').attr('href',value);
+            if(i%3==0){
+                $link = $('<ul>').attr('class','icons');
+                $links.append($link);
+            }
+            $link.append($('<li>').append($('<a>').text(key).attr('href',value)).attr('class','icons-'+key));
             console.log(key);
-            if (key=='devpost'){
-                $img.attr('src',"http://nealrs.github.io/devpost-follow-button/icon/devpost-128.png"); 
-                $link.append($img.attr('alt',val.title+' on '+key));
-            } else if(key=='github') {
-
-                $img.attr('src','https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67');
-                $img.attr('alt',"Fork me on GitHub");
-                $img.attr('data-canonical-src','https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png');
-                $img.css({"position": "absolute", "top": "0", "left": leftPos+"%", "border": "0"});
-                $link.append($img);
-            }else {
-                $link.text(key);
-            }// end if
             $links.append($link);
         });//end each link
         // Create the proglang
@@ -126,7 +136,7 @@ var build = function(data,option=""){
     });//end each projects 
     // right to left css
     if (dir =='rtl'){
-        $(".sideproj").css({"float":"right","text-align":"right"});
+        $(".contentText").css({"float":"right","text-align":"right"});
         $(".desc").css({"float":"right"});
         $("ul.info").css({"float":"right", "text-align":"right"});
         $("ul.info > li").css({"margin-left": "20px",
