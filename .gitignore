@@ -1,3 +1,6 @@
 #testing files
 js/test.js
 test.html
+#unwanted images
+images/icons
+images/icons/*

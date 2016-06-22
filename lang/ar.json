@@ -10,6 +10,11 @@
 		"لكل مشروع حكايته الخاصة",
         "أهلا بك في صفحة Github الخاصة بي"
 	],
+    "titles":[
+        "الوصف",
+        "التقنيات",
+        "الروابط"
+    ],
 	"projects":[
 		{
 			"title":"Scrobble",
@@ -19,7 +24,7 @@
 			     "github": "https://github.com/Oalamoud/Scrobble"
 		      },
             "proglang":[
-                "java"
+                "Java_powered"
             ],
 			"status": ["الحالة","تم الاطلاق"],
             "version": ["الإصدار","v4.0"]
@@ -32,10 +37,10 @@
 		      },
             "proglang":[
                 "python",
-                "html",
-                "css",
-                "jquery",
-                "javascript"
+                "html5",
+                "css3",
+                "jQuery",
+                "JavaScript"
             ],
 			"status": ["الحالة","غير مكتمل"],
             "version": ["الإصدار","v0.0.0"]

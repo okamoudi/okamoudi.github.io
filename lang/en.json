@@ -10,6 +10,11 @@
 		"There is a story behind every project",
 		"Welcom to my Github page"
 	],
+    "titles":[
+        "Description",
+        "Tech",
+        "Links"
+    ],
 	"projects": [{
 		"title": "Scrobble",
 		"description": "At The University of Oregon Quack hack event I signed up with my team to create a game within 40 hr",
@@ -30,10 +35,10 @@
 		},
         "proglang":[
                 "python",
-                "html",
-                "css",
-                "jquery",
-                "javascript"
+                "html5",
+                "css3",
+                "jQuery",
+                "JavaScript"
         ],
 		"status": ["Status","Incomplete"],
 		"version": ["Version","v0.0.0"]

@@ -17,7 +17,6 @@ var main = function(){
         var $langtoggle = 
     $.getJSON(langfile,function(data){
         sessionStorage.setItem('lang',JSON.stringify(data));
-        console.log('data');
         build(data);
     });// end getJSON
         $langtoggle.complete(function(){
@@ -27,34 +26,31 @@ var main = function(){
     });// end .langbtn
 };// end main 
 
-var build = function(data,option="main"){
-    var lang = data.lang
+/*
+Build the entire website function
+*/
+var build = function(data,option=""){
+    //set the language and dir
+    var lang = data.lang;
+    var dir  = data.dir;
+    //set html tag language attribute
     $('html').attr('lang',lang); 
-    $('html').attr('dir',data.dir);
+    //set html tag direction attribute
+    $('html').attr('dir',dir);
+    // remove the content of hi id tag
     $('#hi').empty();
+    // remove the content of typed id tag
     $('#typed').empty();
-    $('#greeting').empty();
-    $.each(data.greeting, function(i,val){        
-        if (i==data.greeting.length-1){
-            val = val+' ^1500';
-        } // end if
-        console.log(val);        
-        $('#greeting').append($('<p>').html(val));
-    });// end each
-    $('#typed-strings').empty();
-    $.each(data.introlist, function(i,val){
-        if (i==data.introlist.length-1){
-            val = val+' ^2000';
-        } // end if
-        console.log(val);        
-        $('#typed-strings').append($('<p>').html(val));
-    });//end each
+    // Genetet typed js animated text
+    typedTextGen('#greeting',data.greeting,1500);
+    typedTextGen('#typed-strings',data.introlist,2000);
+    // if this is refresh the page
     if (option=="reload"){
-        console.log('hi: '+data.greeting[data.greeting.length-1]);
-        console.log('typed: '+data.introlist[data.introlist.length-1]);
+        // Use the last element in the list 
         $('#hi').html(data.greeting[data.greeting.length-1]);
         $('#typed').html(data.introlist[data.introlist.length-1]);
     } // end if
+    // Variables
     var $project;
     var $title;
     var $description;
@@ -64,7 +60,11 @@ var build = function(data,option="main"){
     var $version;
     var $img ;
     var leftPos;
+    var $proglangs;
     var $proglang;
+    /*
+    Create project
+    */
     $.each(data.projects, function(i,val){
         $project=$('#'+val.title+'id');
         $sideproject=$('<div>').attr('class','sideproj');
@@ -76,11 +76,12 @@ var build = function(data,option="main"){
         $description.html(val.description);
         $description= $('<div>').append($description);
         $description.attr('class','desc');
-        $links = $('<div>').attr('id','links');
+        $links = $('<div>').attr('class','links');
         $info=$('<ul>').attr('class','info');
         $status=$('<li>').text(val.status[0]+': '+val.status[1]);
         $version=$('<li>').text(val.version[0]+': '+val.version[1]);
         $title.append($info);
+        $proglangs = $('<div>').attr('class','proglangs');
         $proglang = $('<ul>');
         // APPEND
         $project.append($sideproject);
@@ -90,10 +91,12 @@ var build = function(data,option="main"){
         $info.append($status);
         $info.append($version);
         $sideproject.append($description);
-        $project.append($proglang);
+        $project.append($proglangs);
+        $proglangs.prepend($('<h5>').text(data.titles[1]));
         $project.append($links);
-
+        $links.append($('<h5>').text(data.titles[2]));
         leftPos =100-(100/(i+1));
+        // Create the links
         $.each(val.links,function(key,value){
             $img = $('<img>');
             $link =$('<a>').attr('href',value);
@@ -113,19 +116,43 @@ var build = function(data,option="main"){
             }// end if
             $links.append($link);
         });//end each link
+        // Create the proglang
         $.each(val.proglang,function(indx,value){
-            $proglang.append($('<li>').html(value).attr('class','proglang-'+value));
+           if (indx%3==0){
+               $proglang = $('<ul>');
+               $proglangs.append($proglang);
+           } $proglang.append($('<li>').attr('title',value).attr('class','icons-'+value));
         }); // end proglang
     });//end each projects 
-    if (lang =='ar'){
+    // right to left css
+    if (dir =='rtl'){
         $(".sideproj").css({"float":"right","text-align":"right"});
         $(".desc").css({"float":"right"});
         $("ul.info").css({"float":"right", "text-align":"right"});
         $("ul.info > li").css({"margin-left": "20px",
     "margin-right": "0px"});
         $(".desc").css({"float":"right"});
+        $(".proglangs>h5").css({"float": "right"});
+        $(".links>h5").css({"float": "right"});
     }
 }; //end build
+
+
+var typedTextGen = function(id,list,endDelay=0){
+    // Remove content of the id element
+    $(id).empty();
+    // Go throug the list of strings
+    $.each(list, function(i,val){ 
+        // If this is the last element in the list
+        if (i==list.length-1){
+            // add time delay
+            val = val+' ^'+endDelay;
+        } // end if
+        console.log(val);
+        // Appent the strings with p tag to the id element
+        $(id).append($('<p>').html(val));
+    });// end each
+}
 
 var hi= function(){
     $(function() {

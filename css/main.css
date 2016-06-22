@@ -7,7 +7,7 @@ text-align:center;
 .sideproj{
     width: 50%;
     float: left;
-    height: 80%;
+    height: 100%;
     text-align: left;
 }
 li {
@@ -23,6 +23,7 @@ li {
 }
 .info{
     margin-right: 60px;
+    font-size: .5em;
 }
 #menu{
     margin: 0 auto; 
@@ -43,6 +44,12 @@ ul.info {
     width: 80%;
     margin: 0 auto;
     font-size: 1.5em;
+}
+.proglangs>h5 , .links>h5 {
+    float: left;
+}
+.proglangs>ul>li , .links>ul>li{
+    text-indent: 100000%;
 }
 .langbtn {
     background: #b7c1c7;
@@ -86,3 +93,4 @@ ul li{
 list-style-type	:none;
 display: inline-block;
 }
+
