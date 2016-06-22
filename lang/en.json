@@ -19,7 +19,7 @@
 		"title": "Scrobble",
 		"description": "At The University of Oregon Quack hack event I signed up with my team to create a game within 40 hr",
 		"links": {
-			"devpost": "http://devpost.com/software/scrobble",
+			"devpost": "http://devpost.com/software/scrobble"
 		},
         "forkongithub":"https://github.com/Oalamoud/Scrobble",
         "proglang":[
