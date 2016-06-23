@@ -69,7 +69,7 @@ var build = function(data,option=""){
     */
     $.each(data.projects, function(i,val){
         // Set up variables
-        $project=$('#'+val.title+'id');
+        $project=$('#'+val.id+'id');
         $contentText=$('<div>').attr('class','contentText');
         $contentIcons=$('<div>').attr('class','contentIcons');
         $project.empty();
