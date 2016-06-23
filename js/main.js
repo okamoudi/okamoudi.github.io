@@ -99,12 +99,25 @@ var build = function(data,option=""){
         $contentIcons.append($proglangs);
         if(0<val.proglang.length){
             $proglangs.append($('<h5>').text(data.titles[1]));
-            console.log(data.titles[1]);
+            $.each(val.proglang,function(indx,value){
+               if (indx%3==0){
+                   $proglang = $('<ul>');
+                   $proglangs.append($proglang);
+               } $proglang.append($('<li>').attr('title',value).attr('class','icons-'+value));
+            }); // end proglang
         }
         $contentIcons.append($links);
         if(!$.isEmptyObject(val.links)){
             $links.prepend($('<h5>').text(data.titles[2]));
-            console.log(data.titles[2]);
+            $.each(val.links,function(key,value){
+                if(i%3==0){
+                    $link = $('<ul>').attr('class','icons');
+                    $links.append($link);
+                }
+                $link.append($('<li>').append($('<a>').text(key).attr('href',value)).attr('class','icons-'+key));
+                console.log(key);
+                $links.append($link);
+            });//end each link
         }
         // control the github ribbon
         leftPos =100-(100/(i+1));
@@ -117,22 +130,9 @@ var build = function(data,option=""){
         $project.append($img);
         // Create the links
         var i=0;
-        $.each(val.links,function(key,value){
-            if(i%3==0){
-                $link = $('<ul>').attr('class','icons');
-                $links.append($link);
-            }
-            $link.append($('<li>').append($('<a>').text(key).attr('href',value)).attr('class','icons-'+key));
-            console.log(key);
-            $links.append($link);
-        });//end each link
+        
         // Create the proglang
-        $.each(val.proglang,function(indx,value){
-           if (indx%3==0){
-               $proglang = $('<ul>');
-               $proglangs.append($proglang);
-           } $proglang.append($('<li>').attr('title',value).attr('class','icons-'+value));
-        }); // end proglang
+        
     });//end each projects 
     // right to left css
     if (dir =='rtl'){
