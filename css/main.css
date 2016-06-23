@@ -12,6 +12,7 @@ text-align:center;
     float: left;
     height: 100%;
     text-align: left;
+    display: block;
 }
 .contentIcons{
     width: 50%;
@@ -22,7 +23,16 @@ li {
     text-align: center;
     margin: 0 10px
 }
-.desc{
+
+.title,.desc{
+    width: 90%;
+    margin: 0 auto;
+    
+}
+.title{
+    margin-top: 100px;
+}
+.desc p{
     float: left;
 }
 
@@ -49,11 +59,16 @@ ul.info {
     width: 80%;
     margin: 0 auto;
     font-size: 1.5em;
+    height: 85%;
+    overflow: hidden;
+    background-color: aliceblue;
+    position: relative;
 }
 .proglangs>h5 , .links>h5 {
     float: left;
     
 }
+
 
 .links>ul>li>a{
     display: block;

@@ -120,12 +120,12 @@ var build = function(data,option=""){
             });//end each link
         }
         // control the github ribbon
-        leftPos =100-(100/(i+1));
-        $img = $('<img>');
+//        leftPos =100-(100/(i+1));
+        $img = $('<img>').attr('class','forkme');
         $img.attr('src','https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67');
         $img.attr('alt',"Fork me on GitHub");
         $img.attr('data-canonical-src','https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png');
-        $img.css({"position": "absolute", "top": "0", "left": leftPos+"%", "border": "0"});
+        $img.css({"position": "absolute", "top": "0", "left": "0", "border": "0"});
         $img= $('<a>').append($img).attr('href',val.forkongithub);
         $project.append($img);
         // Create the links
@@ -137,13 +137,19 @@ var build = function(data,option=""){
     // right to left css
     if (dir =='rtl'){
         $(".contentText").css({"float":"right","text-align":"right"});
-        $(".desc").css({"float":"right"});
+        $(".desc>p").css({"float":"right"});
         $("ul.info").css({"float":"right", "text-align":"right"});
         $("ul.info > li").css({"margin-left": "20px",
     "margin-right": "0px"});
-        $(".desc").css({"float":"right"});
         $(".proglangs>h5").css({"float": "right"});
         $(".links>h5").css({"float": "right"});
+        
+        // GitHub Fork me ribbon
+        
+        $('.forkme').attr('src','https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67');
+        $('.forkme').attr('data-canonical-src','https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png');
+        $('.forkme').css({"position": "absolute", "top": "0", "right": "0", "border": "0"});
+        
     }
 }; //end build
 
