@@ -16,6 +16,23 @@
         "Links"
     ],
 	"projects": [{
+        "id":"github",
+		"title": "GitHub Page",
+		"description": "This githup page is pne of my projects I worked on front end of webdesigning",
+		"links": {
+			"github": "Oalamoud.github.io"
+		},
+        "forkongithub":"https://github.com/Oalamoud/Oalamoud.github.io",
+        "proglang":[
+                "html5",
+                "css3",
+                "jQuery",
+                "JavaScript"
+        ],
+		"status": ["Status","Incomplete"],
+		"version": ["Version","v0.1"]
+	   },
+        {
         "id":"scrobble",
 		"title": "Scrobble",
 		"description": "At The University of Oregon Quack hack event I signed up with my team to create a game within 40 hr",
@@ -47,6 +64,7 @@
 		"version": ["Version","v0.0.0"]
 	}],
 	"_projectexample": [{
+        "id":"",
 		"title": "",
 		"description": "",
 		"links": {
@@ -54,14 +72,14 @@
 			"github": "",
 			"devpost": ""
 		},
+        "forkongithub":"",
         "proglang":[
-                "java",
+                "Java",
                 "python",
-                "html",
-                "css",
-                "jquery",
-                "javascript",
-                "mysql"
+                "html5",
+                "css3",
+                "jQuery",
+                "Javascript"
         ],
 		"status": ["",""],
 		"version": ["",""]

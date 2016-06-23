@@ -97,28 +97,30 @@ var build = function(data,option=""){
         $info.append($version);
         $contentText.append($description);
         $contentIcons.append($proglangs);
+        // Create the proglang
         if(0<val.proglang.length){
             $proglangs.append($('<h5>').text(data.titles[1]));
+            $proglang = $('<ul>');
+            $proglangs.append($proglang);
             $.each(val.proglang,function(indx,value){
-               if (indx%3==0){
-                   $proglang = $('<ul>');
-                   $proglangs.append($proglang);
-               } $proglang.append($('<li>').attr('title',value).attr('class','icons-'+value));
+                $proglang.append($('<li>').attr('title',value).attr('class','icons-'+value));
             }); // end proglang
         }
-        $contentIcons.append($links);
+        // Create the links        
         if(!$.isEmptyObject(val.links)){
+             $project.append($links);
             $links.prepend($('<h5>').text(data.titles[2]));
+            $link = $('<ul>').attr('class','icons');
             $.each(val.links,function(key,value){
-                if(i%3==0){
-                    $link = $('<ul>').attr('class','icons');
-                    $links.append($link);
-                }
+                $links.append($link);
+                console.log('new links');
+               console.log('li '+val.title);
                 $link.append($('<li>').append($('<a>').text(key).attr('href',value)).attr('class','icons-'+key));
                 console.log(key);
                 $links.append($link);
             });//end each link
-        }
+            
+        }// end if !$.isEmptyObject(val.links)
         // control the github ribbon
 //        leftPos =100-(100/(i+1));
         $img = $('<img>').attr('class','forkme');
@@ -128,10 +130,7 @@ var build = function(data,option=""){
         $img.css({"position": "absolute", "top": "0", "left": "0", "border": "0"});
         $img= $('<a>').append($img).attr('href',val.forkongithub);
         $project.append($img);
-        // Create the links
-        var i=0;
-        
-        // Create the proglang
+
         
     });//end each projects 
     // right to left css

@@ -15,7 +15,23 @@
         "التقنيات",
         "الروابط"
     ],
-	"projects":[
+	"projects":[{
+        "id":"github",
+		"title": "صفحة GitHub",
+		"description": "هذه الصفخة هي أحد المشاريع اللتي عملت بها في تصميم صفحات الويب",
+		"links": {
+			"github": "http://Oalamoud.github.io"
+		},
+        "forkongithub":"https://github.com/Oalamoud/Oalamoud.github.io",
+        "proglang":[
+                "html5",
+                "css3",
+                "jQuery",
+                "JavaScript"
+        ],
+		"status": ["الحالة","غير مكتمل"],
+		"version": ["الإصدار","v0.1"]
+	   },
 		{
             "id":"scrobble",
 			"title":"Scrobble",
@@ -48,26 +64,25 @@
             "version": ["الإصدار","v0.0.0"]
 		}
 	],
-	"_projectexample":[
-		{
-			"title":"",
-			"description":"",
-            "links":{
-                "githubpage":"",
-                "github":"",
-                "devpost":""
-            },
-            "proglang":[
-                "java",
+	"_projectexample": [{
+        "id":"",
+		"title": "",
+		"description": "",
+		"links": {
+			"repopage": "",
+			"github": "",
+			"devpost": ""
+		},
+        "forkongithub":"",
+        "proglang":[
+                "Java",
                 "python",
-                "html",
-                "css",
-                "jquery",
-                "javascript",
-                "mysql"
-            ],
-		    "status": ["الحالة",""],
-		    "version": ["الإصدار",""]
-		}
-	]
+                "html5",
+                "css3",
+                "jQuery",
+                "Javascript"
+        ],
+		"status": ["",""],
+		"version": ["",""]
+	}]
 }

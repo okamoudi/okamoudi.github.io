@@ -8,16 +8,20 @@ text-align:center;
     display: flex;
 }
 .contentText{
-    width: 50%;
     float: left;
-    height: 100%;
     text-align: left;
     display: block;
 }
 .contentIcons{
-    width: 50%;
+    position: relative;
+/*    min-height: 600px;*/
     float: right;
-    height: 100%;
+}
+.contentIcons,.contentText{
+    margin-top: 120px;
+        height: 100%;
+     width: 50%;
+    display: block;
 }
 li {
     text-align: center;
@@ -29,9 +33,7 @@ li {
     margin: 0 auto;
     
 }
-.title{
-    margin-top: 100px;
-}
+
 .desc p{
     float: left;
 }
@@ -79,6 +81,13 @@ ul.info {
 .proglangs,.links{
     margin: 0 auto;
     width: 80%;
+}
+.links{
+    position: absolute;
+    bottom: 0;
+    left: auto;
+    right: auto;
+    text-align: center;
 }
 .langbtn {
     background: #b7c1c7;
