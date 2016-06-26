@@ -64,7 +64,7 @@ ul.info {
     font-size: 1.5em;
     min-height: 600px;
     overflow: hidden;
-    background-color: aliceblue;
+    background-color: #F2F2F2;
     position: relative;
 }
 .proglangs>h5 , .links>h5 {
@@ -121,6 +121,7 @@ ul.info {
 -ms-user-select: none;       /* Internet Explorer/Edge */
 user-select: none;
     }
+
 .langbtn:hover {
     background: #696d70;
     background-image: -webkit-linear-gradient(top, #696d70, #b7c1c7);
@@ -131,6 +132,7 @@ user-select: none;
     text-decoration: none;
     cursor: pointer;
     }
+
 ul li{
 list-style-type	:none;
 display: inline-block;

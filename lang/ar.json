@@ -3,7 +3,7 @@
 	"dir":"rtl",
 	"title":"عمر العامودي | مستودعات Gitub",
 	"greeting":[
-		"أهلا",
+		"أهلاً",
 		"أنا عمر"
 	],
 	"introlist":[
@@ -18,7 +18,7 @@
 	"projects":[{
         "id":"github",
 		"title": "صفحة GitHub",
-		"description": "هذه الصفخة هي أحد المشاريع اللتي عملت بها في تصميم صفحات الويب",
+		"description": "هذه الصفحة هي أحد المشاريع اللتي عملت بها في تصميم صفحات الويب",
 		"links": {
 			"github": "http://Oalamoud.github.io"
 		},

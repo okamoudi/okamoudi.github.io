@@ -1,7 +1,7 @@
 var main = function(){
     var $window = $(window);
     $('#fullpage').fullpage({
-        sectionsColor : ['#eee', '#eee','#eee','#eee'],
+        sectionsColor : ['#C9C9C9', '#C9C9C9','#C9C9C9','#C9C9C9'],
         animateAnchor:false
     });// end fullpage
     $(".langbtn").click(function(){
