@@ -2,11 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on مدونة عمر العامودي</title>
-    <link>https://okamoudi.com/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on مدونة عمر العامودي</description>
     <generator>Hugo -- 0.147.7</generator>
     <language>ar-sa</language>
-    <lastBuildDate></lastBuildDate>
-    <atom:link href="https://okamoudi.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>الاستثمار في الأفلام</title>
+      <link>http://localhost:1313/posts/investment-in-films/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/investment-in-films/</guid>
+      <description>&lt;p&gt;هذا اختبار لاول مدونة باستخدام هيوجو
+كويس&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>عوائد الأفلام</title>
+      <link>http://localhost:1313/posts/film-revenues/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/film-revenues/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

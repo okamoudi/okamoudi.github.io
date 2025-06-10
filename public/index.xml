@@ -2,20 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>مدونة عمر العامودي</title>
-    <link>https://okamoudi.com/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on مدونة عمر العامودي</description>
     <generator>Hugo -- 0.147.7</generator>
     <language>ar-sa</language>
     <lastBuildDate>Mon, 02 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://okamoudi.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>الاستثمار في الأفلام</title>
+      <link>http://localhost:1313/posts/investment-in-films/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/investment-in-films/</guid>
+      <description>&lt;p&gt;هذا اختبار لاول مدونة باستخدام هيوجو
+كويس&lt;/p&gt;</description>
+    </item>
     <item>
       <title>عنّي</title>
-      <link>https://okamoudi.com/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://okamoudi.com/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;هذه مدونتي الشخصية أشارك فيها أفكاري وتجربتي في مجال الإنتاج وصناعة الأفلام.&lt;br&gt;
 أكتب هنا عن المشاريع اللي أشتغل عليها، والتحديات اللي أواجهها، وبعض النصائح المستفادة من الواقع.&lt;/p&gt;
 &lt;p&gt;إذا كنت مهتم بالإنتاج المستقل، أو تفكر تبدأ رحلتك في صناعة الفيلم، أتمنى تلاقي هنا شيء يلهمك أو يفيدك.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>عوائد الأفلام</title>
+      <link>http://localhost:1313/posts/film-revenues/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/film-revenues/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>
