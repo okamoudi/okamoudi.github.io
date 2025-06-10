@@ -1,0 +1,56 @@
+baseURL = "https://okamoudi.com/"
+languageCode = "ar-sa"
+title = "مدونة عمر العامودي"
+theme = "PaperMod"
+defaultContentLanguage = "ar"
+
+[pagination]
+  pagerSize = 5
+
+[params]
+  env = "production" # أو "development" أثناء التجربة
+  defaultTheme = "auto"
+  disableThemeToggle = false
+  ShowReadingTime = true
+  ShowToc = true
+  TocOpen = false
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  homeInfoParams = { Title = "مدونة عمر العامودي", Content = "مدونة انشر فيها افكاري المتعلقة بالانتاج السينمائي في السعودية"}
+  mainSections = ["posts"]
+
+[[menu.main]]
+  identifier = "home"
+  name = "الرئيسية"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  identifier = "about"
+  name = "عنّي"
+  url = "/about/"
+  weight = 2
+
+[[menu.main]]
+  identifier = "tags"
+  name = "الوسوم"
+  url = "/tags/"
+  weight = 3
+
+[[menu.main]]
+  identifier = "calculator"
+  name = "حاسبة الإنتاج"
+  url = "/production-calculator/"
+  weight = 3
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
